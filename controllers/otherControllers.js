@@ -83,8 +83,8 @@ export const getDashsboardStats = catchAsyncError(async (req, res, next) => {
   else {
     const difference = {
       users: statsData[11].users - statsData[10].users,
-      users: statsData[11].subscriptions - statsData[10].subscriptions,
-      users: statsData[11].views - statsData[10].views,
+      subscriptions: statsData[11].subscriptions - statsData[10].subscriptions,
+      views: statsData[11].views - statsData[10].views,
     };
 
     usersPercentage = (difference.users / statsData[10].users) * 100;
