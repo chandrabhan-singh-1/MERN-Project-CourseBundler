@@ -8,6 +8,7 @@ export const sendToken = (res, user, message, statusCode = 200) => {
     secure: false,
     sameSite: "none",
     domain: "localhost",
+    maxAge: 5 * 24 * 60 * 60 * 1000,
   };
 
   res.status(statusCode).cookie("token", token, options).json({

@@ -146,6 +146,7 @@ export const logout = catchAsyncError(async (req, res, next) => {
       secure: false,
       sameSite: "none",
       domain: "localhost",
+      maxAge: 5 * 24 * 60 * 60 * 1000,
     })
     .json({
       success: true,
