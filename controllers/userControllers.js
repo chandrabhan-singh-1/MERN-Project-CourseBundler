@@ -147,7 +147,7 @@ export const logout = catchAsyncError(async (req, res, next) => {
     })
     .json({
       success: true,
-      message: "Logged-out successfully!",
+      message: "Logged-out successfully",
     });
 });
 
