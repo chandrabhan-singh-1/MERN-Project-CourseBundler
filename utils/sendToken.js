@@ -5,7 +5,7 @@ export const sendToken = (res, user, message, statusCode = 200) => {
     maxAge: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
     httpOnly: true,
     path: "/",
-    secure: true,
+    secure: false,
     sameSite: "none",
   };
 
