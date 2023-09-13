@@ -141,12 +141,11 @@ export const logout = catchAsyncError(async (req, res, next) => {
     .status(200)
     .cookie("token", null, {
       expires: new Date(Date.now()),
-      httpOnly: true,
+      httpOnly: false,
       path: "/",
       secure: false,
       sameSite: "none",
       domain: "localhost",
-      maxAge: 5 * 24 * 60 * 60 * 1000,
     })
     .json({
       success: true,
