@@ -2,10 +2,10 @@ export const sendToken = (res, user, message, statusCode = 200) => {
   const token = user.getJWTToken();
 
   const options = {
-    maxAge: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+    expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
     httpOnly: true,
     path: "/",
-    secure: false,
+    secure: true,
     sameSite: "none",
   };
 
