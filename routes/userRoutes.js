@@ -43,7 +43,7 @@ router.route("/login").post(login);
 router.route("/logout").get(logout);
 
 // Get my profile
-router.route("/me").get(isAuthenticated, getMyProfile);
+router.route("/me").get(getMyProfile);
 
 // Delete My Profile
 router.route("/me").delete(isAuthenticated, deleteMyProfile);
