@@ -144,6 +144,7 @@ export const logout = catchAsyncError(async (req, res, next) => {
       httpOnly: true,
       secure: false,
       sameSite: false,
+      path: "/",
     })
     .json({
       success: true,
