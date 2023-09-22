@@ -73,7 +73,7 @@ export const getCourseLectures = catchAsyncError(async (req, res, next) => {
   });
 });
 
-// Max allowed video size free cloudinary plan is: 100 mb
+// Max allowed video size for free cloudinary plan is: 100 mb
 export const addCourseLecture = catchAsyncError(async (req, res, next) => {
   const { title, description } = req.body;
   // const id = req.params.id;
