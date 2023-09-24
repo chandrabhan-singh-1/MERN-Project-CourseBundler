@@ -7,7 +7,7 @@ export const sendToken = (res, user, message, statusCode = 200) => {
     secure: true,
     sameSite: "none",
     path: "/",
-    domain: "localhost",
+    domain: "mern-project-course-bundler.vercel.app",
   };
 
   res.status(statusCode).cookie("token", token, options).json({
