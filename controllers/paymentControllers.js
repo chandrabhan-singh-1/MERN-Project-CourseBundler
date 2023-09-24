@@ -10,7 +10,7 @@ export const buySubscription = catchAsyncError(async (req, res, next) => {
 
   if (user.role === "admin") {
     return next(
-      new ErrorHandler("Admin does not need to buy a subcription!", 409)
+      new ErrorHandler("Admin doesn't need to buy subcription!", 409)
     );
   }
 

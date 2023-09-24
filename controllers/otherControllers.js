@@ -35,7 +35,7 @@ export const courseRequest = catchAsyncError(async (req, res, next) => {
 
   const subject = "Course Request on CourseBundler";
 
-  const requestCourse = `<p>I am <b>${name}</b> and my Email is <b>${email}</b>.</p> <br><b>Requested Course -</b> <br> ${course}`;
+  const requestCourse = `<p>My name is <b>${name}</b> and my Email is <b>${email}</b>.</p> <br><b>My Course Request -</b> <br> ${course}`;
 
   await sendEmail(userEmail, subject, requestCourse);
 
@@ -78,8 +78,8 @@ export const getDashsboardStats = catchAsyncError(async (req, res, next) => {
 
   if (statsData[10].users === 0) usersPercentage = usersCount * 100;
   if (statsData[10].subscriptions === 0)
-    usersPercentage = subscriptionsCount * 100;
-  if (statsData[10].views === 0) usersPercentage = viewsCount * 100;
+    subscriptionsPercentage = subscriptionsCount * 100;
+  if (statsData[10].views === 0) viewsPercentage = viewsCount * 100;
   else {
     const difference = {
       users: statsData[11].users - statsData[10].users,

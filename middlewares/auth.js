@@ -32,10 +32,7 @@ export const authorizeAdmin = catchAsyncError(async (req, res, next) => {
 export const authorizeSubscribers = catchAsyncError(async (req, res, next) => {
   if (req.user.subscription.status !== "active" && req.user.role !== "admin") {
     return next(
-      new ErrorHandler(
-        "Subscribers and Admin only can access this resource!",
-        403
-      )
+      new ErrorHandler("Only Subscribers can access this resource!", 403)
     );
   }
 

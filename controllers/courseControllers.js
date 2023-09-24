@@ -52,7 +52,7 @@ export const createCourse = catchAsyncError(async (req, res, next) => {
 
   res.status(201).json({
     success: true,
-    message: "Course created successfully! You can add lectures now.",
+    message: "Course created successfully! Add lectures now.",
   });
 });
 
