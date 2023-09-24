@@ -139,7 +139,8 @@ export const login = catchAsyncError(async (req, res, next) => {
 export const logout = catchAsyncError(async (req, res, next) => {
   res
     .status(200)
-    .clearCookie("token", {
+    .cookie("token", null, {
+      maxAge: new Date(-10000),
       httpOnly: true,
       secure: true,
       sameSite: "none",
