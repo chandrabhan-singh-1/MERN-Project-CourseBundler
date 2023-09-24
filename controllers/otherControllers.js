@@ -35,7 +35,7 @@ export const courseRequest = catchAsyncError(async (req, res, next) => {
 
   const subject = "Course Request on CourseBundler";
 
-  const requestCourse = `<p>I am <b>${name}</b> and my Email is <b>${email}</b>.</p> <br><b>Request Course -</b> <br> ${course}`;
+  const requestCourse = `<p>I am <b>${name}</b> and my Email is <b>${email}</b>.</p> <br><b>Requested Course -</b> <br> ${course}`;
 
   await sendEmail(userEmail, subject, requestCourse);
 

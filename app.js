@@ -38,6 +38,10 @@ app.use("/api/v1/", otherRoutes);
 
 export default app;
 
+app.get("/favicon.ico", (req, res) => {
+  res.status(204).end();
+});
+
 app.get("/", (req, res) =>
   res.send(
     `<h1>Website is Working. Click <a href=${process.env.FRONTEND_URL}>here</a> to visit the Frontend.`
