@@ -40,7 +40,7 @@ router.route("/register").post(singleUpload, register);
 router.route("/login").post(login);
 
 // Logout
-router.route("/logout").get(isAuthenticated, logout);
+router.route("/logout").delete(isAuthenticated, logout);
 
 // Get my profile
 router.route("/me").get(isAuthenticated, getMyProfile);
