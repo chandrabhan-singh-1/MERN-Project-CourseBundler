@@ -144,7 +144,6 @@ export const logout = catchAsyncError(async (req, res, next) => {
       secure: true,
       sameSite: "none",
       path: "/",
-      domain: "mern-project-course-bundler.vercel.app",
     })
     .json({
       success: true,
