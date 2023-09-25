@@ -20,7 +20,14 @@ dotenv.config({
 const app = express();
 
 // Serve static files from the 'build' directory
-app.use(express.static(path.join(__dirname, "build")));
+app.use(
+  express.static(
+    path.join(
+      __dirname,
+      "https://github.com/chandrabhan-singh-1/MERN-Project-CourseBundler-Frontend.git/build"
+    )
+  )
+);
 
 // Using Middlewares
 app.use(express.json());
@@ -49,7 +56,7 @@ app.get("*", (req, res) => {
     path.join(
       __dirname,
       "build",
-      "https://mern-project-course-bundler-frontend.vercel.app"
+      "https://github.com/chandrabhan-singh-1/MERN-Project-CourseBundler-Frontend.git/build/index.html"
     )
   );
 });
