@@ -7,12 +7,20 @@ import otherRoutes from "./routes/otherRoutes.js";
 import ErrorMiddleware from "./middlewares/error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+// Get the directory name of the current module's file
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 dotenv.config({
   path: "./config/config.env",
 });
 
 const app = express();
+
+// Serve static files from the 'build' directory
+app.use(express.static(path.join(__dirname, "build")));
 
 // Using Middlewares
 app.use(express.json());
@@ -35,6 +43,16 @@ app.use("/api/v1", userRoutes);
 app.use("/api/v1/", courseRoutes);
 app.use("/api/v1/", paymentRoutes);
 app.use("/api/v1/", otherRoutes);
+// Handle all other routes by serving 'index.html'
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "build",
+      "https://mern-project-course-bundler-frontend.vercel.app"
+    )
+  );
+});
 
 export default app;
 
